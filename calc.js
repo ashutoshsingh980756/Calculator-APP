@@ -3,6 +3,8 @@ function calculator(task) {
   let getSecondValue = document.getElementById('second-value').value;
   let displayVal = document.getElementById('calc-value');
   let calculatedValue;
+  debugger;
+  displayVal.innerText = '';
   // via If else
     if (getFirstValue.trim() !== '' && getSecondValue.trim() !== '') {
 //     if (task === 'add') {
@@ -34,13 +36,12 @@ function calculator(task) {
             case 'divide':
                 calculatedValue =  +getFirstValue / +getSecondValue;
                 break;
-            default:
-                displayVal.innerText = `Please add correct value to ${task}`
             
         }
-        if (!displayVal.innerText) {
+        
             displayVal.innerText  = calculatedValue;
-        }
+    } else {
+        displayVal.innerText = `Please add correct value to do ${task}`
     }
 }
   
