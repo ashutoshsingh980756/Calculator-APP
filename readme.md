@@ -1,2 +1,2 @@
 I have created calculator app using JS. 
-used if-else
+used if-else and switch cases.
