@@ -3,25 +3,47 @@ function calculator(task) {
   let getSecondValue = document.getElementById('second-value').value;
   let displayVal = document.getElementById('calc-value');
   let calculatedValue;
-  if (getFirstValue.trim() !== '' && getSecondValue.trim() !== '') {
-    if (task === 'add') {
-        calculatedValue =  +getFirstValue + +getSecondValue;
+  // via If else
+    if (getFirstValue.trim() !== '' && getSecondValue.trim() !== '') {
+//     if (task === 'add') {
+//         calculatedValue =  +getFirstValue + +getSecondValue;
+//     }
+//     else if (task === 'substract') {
+//         calculatedValue = +getFirstValue - +getSecondValue
+//     }
+//     else if (task === 'multiply') {
+//        calculatedValue = +getFirstValue * +getSecondValue
+//     }
+//     else if (task === 'divide') {
+//         calculatedValue = +getFirstValue / +getSecondValue
+//     }
+//     displayVal.innerText = calculatedValue.toFixed(2)
+//   } else {
+//     displayVal.innerText = `Please add correct value to ${task}`
+// via switch case
+        switch(task) {
+            case 'add': 
+            calculatedValue =  +getFirstValue + +getSecondValue;
+            break;
+            case 'substract':
+                calculatedValue =  +getFirstValue - +getSecondValue;
+                break;
+            case 'multiply':
+                calculatedValue =  +getFirstValue * +getSecondValue;
+                break;
+            case 'divide':
+                calculatedValue =  +getFirstValue / +getSecondValue;
+                break;
+            default:
+                displayVal.innerText = `Please add correct value to ${task}`
+            
+        }
+        if (!displayVal.innerText) {
+            displayVal.innerText  = calculatedValue;
+        }
     }
-    else if (task === 'substract') {
-        calculatedValue = +getFirstValue - +getSecondValue
-    }
-    else if (task === 'multiply') {
-       calculatedValue = +getFirstValue * +getSecondValue
-    }
-    else if (task === 'divide') {
-        calculatedValue = +getFirstValue / +getSecondValue
-    }
-    displayVal.innerText = calculatedValue.toFixed(2)
-  } else {
-    displayVal.innerText = `Please add correct value to ${task}`
-  }
-  
 }
+  
 
 document.getElementById('add').addEventListener('click', function() {
     calculator('add');
